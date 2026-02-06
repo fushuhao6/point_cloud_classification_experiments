@@ -1,0 +1,192 @@
+<!-- Yi-Chia Chen -->
+
+<!DOCTYPE html>
+<html lang='en' translate='no'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>UCLA Experiment</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Raleway&display=swap' />
+    <link rel='stylesheet' href='style.css' />
+    <script src='https://hcaptcha.com/1/api.js?hl=en' async defer></script>
+</head>
+
+<body>
+    <noscript>It seems that JavaScript is disabled in your browser. Please go to settings and enable JavaScript for this experiment.</noscript>
+
+    <!--======== PLEDGE ========-->
+    <div class='pageBox' id='pledgeBox'>
+        <div class='boldText'>Will you read all the instructions carefully and treat the study seriously?</div>
+        <label><div class='option'><input class='optionRadio' type='radio' name='pledge' value='1' /><div class='optionText'>Yes.</div></div></label>
+        <label><div class='option'><input class='optionRadio' type='radio' name='pledge' value='0' /><div class='optionText'>No.</div></div></label>
+        <div class='button' onclick='SUBMIT_PLEDGE_Q()'>SUBMIT</div>
+        <br />
+        <div class='warning' id='pledgeQWarning'></div>
+        <br />
+    </div>
+
+    <!--======== INSTRUCTIONS ========-->
+    <div class='pageBox' id='instrBox'>
+        <p id='instrText'></p>
+        <img id='instrImg' alt='Image Error: Please contact [email] with the code "IMG_ERROR".'>
+        <img id='instrGif' alt='Image Error: Please contact [email] with the code "IMG_ERROR".'>
+        <!--======== EXAMPLE Buttons ========-->
+        <div class='warning' id='instrWarning'></div>
+        <div id='instr_button' class="instr_button_group">
+            <button id="instr1">Bathtub</button>
+            <button id="instr2">Bed</button>
+            <button id="instr3">Bookshelf</button>
+            <button id="instr4">Car</button>
+            <button id="instr5">Keyboard</button>
+            <button id="instr6">Laptop</button>
+            <button id="instr7">Plant</button>
+            <button id="instr8">Sink</button>
+            <button id="instr9">Vase</button>
+            <button id="instr10">XBox</button>
+        </div>
+        <div class='button' id='nextButton' onclick='instr.next()'>NEXT</div>
+        <!--======== INFORMED CONSENT FORM ========-->
+        <div class='pageBox' id='consentBox'>
+            <div class='consentInstr'>To conduct this experiment, we need to include this information sheet:</div>
+            <div id='consentTextBox'>+
+                <strong>INFORMATION SHEET for online participants</strong><br /><br />
+                You are invited to participate in a research study on human vision, conducted by [PI], of the [Dept. of XXX] at [School]. You were selected as a possible participant in this study because you have normal or corrected vision, and are 18 years of age or older. For scientific reasons, this consent form does not include complete information about the study hypotheses and the research questions being tested. You will be fully debriefed following your participation in the research.
+                <br /><br />
+                <strong>Purpose of Study</strong><br />
+                In this study, we are interested in processes involved in reasoning.
+                <br /><br />
+                <strong>Procedures Involved in Study</strong><br />
+                In this study you will be asked to partake in reading, memory, and problem solving tasks. You will be presented with analogy problems in either verbal or pictorial format. The problems will be shown on computer. Some problems will ask you to select certain image patches on an object. Other problems will be in the form of multiple-choice questions. For each question, you will be asked to select the most appropriate answer that forms a valid analogy. You will also be asked to solve a few problems in the cognitive reflection task and use a likert scale to answer questions in Autistic spectrum quotient questionnaire, such as “I often notice small sounds when others do”. The experiment may take up to 60 minutes.
+                <br /><br />
+                <strong>Potential Risks and Discomforts</strong><br />
+                There is no known risk/discomfort in this study. If you experience any discomfort during the course of the experiment, you can stop at any time and notify the experimenter.
+                <br /><br />
+                <strong>Potential Benefits to Subject</strong><br />
+                There are no direct benefits from participating in this study.
+                <br /><br />
+                <strong>Potential Benefits to Society</strong><br />
+                Your participation in this study will contribute to further our understanding of the cognitive processes involved in reasoning. Once these processes are understood future research could lead to development of methods for improving education.
+                <br /><br />
+                <strong>Payment for Participation</strong><br />
+                You will receive 1 hour of credit for your psychology class if you signed up for the study through the UCLA Psychology Department Subject Pool.
+                <br /><br />
+                <strong>Confidentiality</strong><br />
+                Your responses to items in the experiment will be saved in a separate secure file from your registration information (e-mail address). The file with your responses to items in the study will be used only for data analysis, while the file with your registration information will only be used to confirm consent and to verify that a single participant doesn't take the experiment more than once. After the experiment has finished running, all contact information will be destroyed. Only the researchers will have access to registration and data files. The data files that you submit will be stored for 5 years. Any information that is obtained in connection with this study and that can be identified with you will remain confidential and will be disclosed only with your permission or as required by law. When the results of the research are published or discussed in conferences, no information will be included that would reveal your identity. Your data, including de-identified data may be kept for use in future research.
+                <br /><br />
+                <strong>Participation and Withdraw</strong><br />
+                If you participate in this study, you may withdraw at any time without consequences of any kind. The investigator may withdraw you from the analysis of this research if circumstances arise which warrant doing so.
+                <br /><br />
+                <strong>Identification of Investigators</strong><br />
+                If you have any questions, feel free to contact [Researcher] ([email]), at the Department of [XXX].
+                <br /><br />
+                <strong>Rights of Research Subjects</strong><br />
+                You may withdraw your consent at any time and discontinue participation without penalty. You are not waiving any legal claims, rights, or remedies because of your participation in this research study.
+                <br /><br />
+                UCLA Office of the Human Research Protection Program (OHRPP)
+                If you have questions about your rights as a research subject, or you have concerns or suggestions and you want to talk to someone other than the researchers, you may contact the [XXX] by phone: (123) 456-7890; by email: [email] or by mail: [address].
+            </div>
+        </div>
+    </div>
+
+    <!--======== INSTRUCTIONS QUIZ ========-->
+    <div class='pageBox' id='instrQBox'>
+        <div class='boldText'>What is your job in this experiment?</div>
+        <label><div class='option'><input class='optionRadio' type='radio' name='instrQ' value='forgot' /><div class='optionText'>Select this option if you do not remember the instructions.</div></div></label>
+        <label><div class='option'><input class='optionRadio' type='radio' name='instrQ' value='option1' /><div class='optionText'>Draw two circle markers on the analogous parts of the right image if there is an analogical relationship, otherwise draw on the top right corner.</div></div></label>
+        <label><div class='option'><input class='optionRadio' type='radio' name='instrQ' value='option2' /><div class='optionText'>Draw two circle markers on the analogous parts on the left image if there is an analogical relationship, otherwise draw on the top left corner.</div></div></label>
+        <label><div class='option'><input class='optionRadio' type='radio' name='instrQ' value='option3' /><div class='optionText'>Move two circle markers on the right image to analogous parts if there is an analogical relationship with the left image, otherwise move them back to the top right corner.</div></div></label>
+        <label><div class='option'><input class='optionRadio' type='radio' name='instrQ' value='option4' /><div class='optionText'>Move two circle markers on the left image to analogous parts if there is an analogical relationship with the left image, otherwise move them back to the top left corner.</div></div></label>
+        <div class='button' onclick='SUBMIT_INSTR_Q()'>SUBMIT</div>
+        <br />
+        <div class='warning' id='instrQWarning'></div>
+        <br />
+    </div>
+
+
+    <!--======== TRIALS ========-->
+    <div class='pageBox' id='trialBox'>
+        <div class='progressBar' id='trialProgressBar'><span id='trialProgress'>0</span>% completed</div>
+        <div class='imageDiv'>
+            <img id='testImg' src='Stimuli_upright/stimuli_1.gif' alt='Image Error: Please contact [email] with the code "IMG_ERROR".'/>
+        </div>
+        <div class='bufferDiv'>
+            <img id='bufferImg' src='Stimuli_upright/stimuli_1.gif' alt='' />
+        </div>
+        <div id="button-group" class="button_group">
+            <button id="cls1">Airplane</button>
+            <button id="cls2">Bottle</button>
+            <button id="cls3">Bowl</button>
+            <button id="cls4">Chair</button>
+            <button id="cls5">Cup</button>
+            <button id="cls6">Lamp</button>
+            <button id="cls7">Person</button>
+            <button id="cls8">Piano</button>
+            <button id="cls9">Stool</button>
+            <button id="cls10">Table</button>
+        </div>
+    </div>
+
+    <!--======== REST ========-->
+    <div class='pageBox' id='restBox'>
+        <p id='restText'></p>
+    </div>
+
+    <!--======== DEBRIEFING QUESTION ========-->
+    <div class='pageBox' id='questionsBox'>
+        You are almost done! Now please answer these last 4 questions:<br /><br /><br />
+
+        <div class='boldText'>Did you complete this experiment seriously throughout (without randomly responding)?</div>
+        <div class='smallDimText'>You will receive credit regardless of what your answer is here. Please be honest for science! Thanks!</div>
+        <label><div class='option'><input class='optionRadio' type='radio' name='serious' value='0' /><div class='optionText'>No, I didn't.</div></div></label>
+        <label><div class='option'><input class='optionRadio' type='radio' name='serious' value='1' /><div class='optionText'>Yes, I did.</div></div></label>
+
+        <br /><br /><br />
+
+        <div class='boldText'>Was any part of the procedure unclear? Did you have any problems completing any of the tasks?</div>
+        <div class='smallDimText'>You will receive credit regardless of what your answer is here. Please be honest for science! Thanks!</div>
+        <textarea id='problems' rows='3' cols='90'></textarea>
+
+        <br /><br /><br />
+
+        <div class='boldText'>What is your gender?</div>
+          <label><div class='option'><input class='optionRadio' type='radio' name='gender' value='F' /><div class='optionText'>Female</div></div></label>
+          <label><div class='option'><input class='optionRadio' type='radio' name='gender' value='M' /><div class='optionText'>Male</div></div></label>
+          <label><div class='option'><input class='optionRadio' type='radio' name='gender' value='O' /><div class='optionText'>Other</div></div></label>
+          <label><div class='option'><input class='optionRadio' type='radio' name='gender' value='N' /><div class='optionText'>I would rather not say</div></div></label>
+
+        <br /><br /><br />
+
+        <div class='boldText'>What is your age?</div>
+        <input type='number' id='age' min='0' max='199'/>
+
+        <br /><br /><br />
+
+        <div class='button' onclick='SUBMIT_DEBRIEFING_Q()'>SUBMIT</div>
+        <br />
+        <div class='warning' id='QWarning'></div>
+        <br />
+    </div>
+
+    <!--======== DEBRIEFING ========-->
+    <div class='pageBox' id='debriefingBox'>
+        You have finished the experiment! Thank you very much!<br /><br /> Whenever you are ready, click END to submit your work. You may read the text below if you are interested in what we are studying.<br />
+        <div class='button' onclick='END_TO_PROLIFIC()'>END</div>
+        <br /><br />
+        <strong>Debriefing Sheet</strong><br />
+        Thanks for participating in the experiment.<br /><br />
+        In this study, we are insterested in how people recognize objects depicted in the point cloud display with different numbers of points.<br /><br />
+
+        Please don't hesitate to contact the researcher if you have any questions:<br /><br />
+        [researcher]<br />
+        [department, school]<br />
+        [email]<br /><br /><br />
+
+    </div>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.3/mobile-detect.min.js'></script>
+    <script src='func.js'></script>
+    <script src='expt.js'></script>
+    <script src='index.js'></script>
+</body>
+
+</html>
