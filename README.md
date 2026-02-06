@@ -7,9 +7,6 @@ The implementation of this experiment is based on Yi-Chia Chen's [Experiment cod
 
 ---
 
-## Stimuli preparation
-
-
 ## Project Structure
 
 ```
