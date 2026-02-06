@@ -1,9 +1,14 @@
 # Point Cloud Classification Experiment Data and Interface
 
 This repository contains the code and data for our three experiments in paper 
-[Hierarchical Abstraction Enables Human-Like 3D Object Recognition in Deep Learning Models](https://arxiv.org/abs/2507.09830)
+[Hierarchical Abstraction Enables Human-Like 3D Object Recognition in Deep Learning Models](https://arxiv.org/abs/2507.09830).
+
+The implementation of this experiment is based on Yi-Chia Chen's [Experiment code](https://github.com/Yi-Chia-Chen/js-expt-toolbox).
 
 ---
+
+## Stimuli preparation
+
 
 ## Project Structure
 

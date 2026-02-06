@@ -25,7 +25,7 @@ const VIEWPORT_MIN_H = 600;
 
 const INSTR_READING_TIME_MIN = 0.5;
 
-const STIM_PATH = 'Stimuli_' + EXPERIMENT_NAME + '/';
+const STIM_PATH = 'Stimuli/Stimuli_' + EXPERIMENT_NAME + '/';
 
 // trial
 const PRACTICE_LIST = []; // = ['source0.png'];
